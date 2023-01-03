@@ -31,7 +31,9 @@ const FloatingInputField = (props: FloatingInputFieldProps) => {
           placeholder={placeholder}
           {...props.formControlProps}
         />
-        <Form.Control.Feedback type="invalid">{props.validationErrorMessage}</Form.Control.Feedback>
+        <Form.Control.Feedback type="invalid">
+          {props.validationErrorMessage}
+        </Form.Control.Feedback>
       </FloatingLabel>
     </Form.Group>
   );

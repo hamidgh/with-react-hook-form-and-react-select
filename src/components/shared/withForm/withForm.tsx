@@ -3,7 +3,11 @@ import './style/withForm.style.scss';
 import {FieldValues, useForm} from 'react-hook-form';
 import {Button, Form} from 'react-bootstrap';
 
-type WithFormElementType = { name: string, initialValue: string, required: boolean };
+type WithFormElementType = {
+  name: string,
+  initialValue: string,
+  required: boolean
+};
 export type WrappedComponentPropsType = {
   register: any,
   errors: any
@@ -11,6 +15,7 @@ export type WrappedComponentPropsType = {
 export type WithFormPropsType = {
   formSubmittedCallback: (data: FieldValues) => void
 }
+
 const withForm = (WrappedComponent: React.ElementType, elements: WithFormElementType[]) => {
   return (props: WithFormPropsType) => {
     const elementsWithInitialValues: any = {};
@@ -38,7 +43,6 @@ const withForm = (WrappedComponent: React.ElementType, elements: WithFormElement
       </Form>
     );
   };
-
 };
 
 export default withForm;

@@ -1,4 +1,5 @@
 import React from 'react';
+import './style/profilePage.style.scss';
 import PersonalInfoForm from './personalInfoForm';
 import {FieldValues} from 'react-hook-form';
 
@@ -8,7 +9,12 @@ const ProfilePage = () => {
     console.log(formData);
   };
   return (
-    <PersonalInfoForm formSubmittedCallback={_formSubmittedCallback} />
+    <div className="profile-page">
+      <h3 className="profile-page--header">
+        My profile
+      </h3>
+      <PersonalInfoForm formSubmittedCallback={_formSubmittedCallback} />
+    </div>
   );
 };
 

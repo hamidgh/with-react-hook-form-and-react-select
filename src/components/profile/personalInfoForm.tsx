@@ -4,9 +4,8 @@ import withForm, {WrappedComponentPropsType} from '../shared/withForm/withForm';
 
 const elements = [
   {name: 'firstName', initialValue: '', required: true},
-  {name: 'lastName', initialValue: '', required: true}
+  {name: 'dateOfBirth', initialValue: '', required: true}
 ];
-
 const PersonalInfoForm = (props: WrappedComponentPropsType) => {
   const {register, errors} = props;
   const requiredInputMessage: string = 'Fill out the field';
@@ -15,17 +14,20 @@ const PersonalInfoForm = (props: WrappedComponentPropsType) => {
     <>
       <FloatingInputField
         required
-        label='First name'
+        label="First name"
         formControlProps={register('firstName', {
-          required: requiredInputMessage, maxLength: 80})}
+          required: requiredInputMessage, maxLength: 80
+        })}
         validationErrorMessage={errors['firstName']?.message}
       />
       <FloatingInputField
         required
-        label='Last name'
-        formControlProps={register('lastName', {
-          required: requiredInputMessage, maxLength: 100})}
-        validationErrorMessage={errors['lastName']?.message}
+        type="date"
+        label="Date of birth"
+        formControlProps={register('dateOfBirth', {
+          required: requiredInputMessage
+        })}
+        validationErrorMessage={errors['dateOfBirth']?.message}
       />
     </>
   );
