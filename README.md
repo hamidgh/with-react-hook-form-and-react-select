@@ -1,6 +1,9 @@
 # Create a Higher Order Component (HOC) with React Hook Form 
 
-You can watch step by step of this tutorial from this link [YouTube Video](URL_HERE).
+You can watch step by step of this tutorial from these links
+    Part 1: [YouTube Video Tutorial part 1 - Text Input](https://youtu.be/9h4ZkZMcNmI) \
+    Part 2: [YouTube Video Tutorial part 2 - Date picker](https://youtu.be/4TOG-hgeDFc) \
+    Part 3: [YouTube Video Tutorial part 3 - Select field (multiple options)](https://youtu.be/9RspE_CYYTE)
 
 ## useful links that were used in tutorial
 1- [HOC Tutorial](https://youtu.be/leY17OeiHqE) \
