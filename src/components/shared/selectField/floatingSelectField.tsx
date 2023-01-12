@@ -19,8 +19,8 @@ const FloatingSelectField = (props: FloatingSelectFieldProps) => {
   return (
     <Form.Group className={`floating-select-field ${props.formGroupClasses}`}>
       <FloatingLabel controlId="floatingSelect" label={props.label}>
-        <Form.Select required={props.required} {...props.formControlProps} value={props.value} defaultValue="">
-          <option disabled />
+        <Form.Select required={props.required} {...props.formControlProps} value={props.value} defaultValue="Select">
+          <option value="" >Select</option>
           {props.selectOptions.map((item, index) => {
             return <option key={index}>{item}</option>;
           })}

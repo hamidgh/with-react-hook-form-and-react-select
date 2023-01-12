@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/react-refs.iml" filepath="$PROJECT_DIR$/.idea/react-refs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../with-react-hook-form/.idea/react-refs.iml" filepath="$PROJECT_DIR$/../with-react-hook-form/.idea/react-refs.iml" />
     </modules>
   </component>
 </project>

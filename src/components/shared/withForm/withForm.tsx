@@ -1,28 +1,22 @@
 import React, {useState} from 'react';
 import './style/withForm.style.scss';
-import {FieldValues, useForm} from 'react-hook-form';
+import {FieldValues, useForm, Controller} from 'react-hook-form';
 import {Button, Form} from 'react-bootstrap';
 
-type WithFormElementType = {
-  name: string,
-  initialValue: string,
-  required: boolean
-};
 export type WrappedComponentPropsType = {
   register: any,
-  errors: any
+  errors: any,
+  controller: any,
+  control: any
 }
 export type WithFormPropsType = {
-  formSubmittedCallback: (data: FieldValues) => void
+  formSubmittedCallback: (data: FieldValues) => void,
+  submitButtonLabel?: string
 }
 
-const withForm = (WrappedComponent: React.ElementType, elements: WithFormElementType[]) => {
+const withForm = (WrappedComponent: React.ElementType) => {
   return (props: WithFormPropsType) => {
-    const elementsWithInitialValues: any = {};
-    elements.forEach((element: WithFormElementType) => {
-      elementsWithInitialValues[element.name] = element.initialValue;
-    });
-    const {register, handleSubmit, formState: {errors}} = useForm();
+    const {register, handleSubmit, formState: {errors}, control} = useForm();
     const [shouldValidate, setShouldValidate] = useState(false);
 
     const onSubmit = async (data: FieldValues) => {
@@ -31,14 +25,14 @@ const withForm = (WrappedComponent: React.ElementType, elements: WithFormElement
 
     return (
       <Form noValidate validated={shouldValidate} onSubmit={handleSubmit(onSubmit)}>
-        <WrappedComponent register={register} errors={errors} />
+        <WrappedComponent register={register} errors={errors} controller={Controller} control={control} />
         <Button
           className="submit-button"
           variant="primary"
           type="submit"
           onClick={() => setShouldValidate(true)}
         >
-          Submit
+          {props.submitButtonLabel ? props.submitButtonLabel : 'Submit'}
         </Button>
       </Form>
     );
