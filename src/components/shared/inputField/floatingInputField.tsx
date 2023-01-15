@@ -3,17 +3,17 @@ import './style/floatingInputField.style.scss';
 import {FloatingLabel, Form} from 'react-bootstrap';
 
 type FloatingInputFieldProps = {
-  value?: string,
-  required?: boolean,
-  validationErrorMessage?: string,
-  formGroupClasses?: string,
   floatingLabelClasses?: string,
   formControlClasses?: string,
-  type?: string,
-  step?: string,
+  formControlProps?: {},
+  formGroupClasses?: string,
   label: string,
   placeholder?: string
-  formControlProps?: {}
+  required?: boolean,
+  step?: string,
+  type?: string,
+  validationErrorMessage?: string,
+  value?: string
 }
 const FloatingInputField = (props: FloatingInputFieldProps) => {
   const placeholder = props.placeholder ? props.placeholder : props.label;

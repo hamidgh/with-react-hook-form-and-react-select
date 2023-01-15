@@ -3,16 +3,16 @@ import './style/floatingSelectField.style.scss';
 import {FloatingLabel, Form} from 'react-bootstrap';
 
 type FloatingSelectFieldProps = {
-  value?: string,
-  required?: boolean
-  validationErrorMessage?: string,
-  formGroupClasses?: string,
   floatingLabelClasses?: string,
-  selectClasses?: string,
-  optionClasses?: string,
+  formControlProps?: {},
+  formGroupClasses?: string,
   label: string,
+  optionClasses?: string,
+  required?: boolean,
+  selectClasses?: string,
   selectOptions: Array<string | number>,
-  formControlProps?: {}
+  validationErrorMessage?: string,
+  value?: string
 }
 
 const FloatingSelectField = (props: FloatingSelectFieldProps) => {
